@@ -33,6 +33,21 @@
     <ClCompile Include="Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Question.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authorisation.h">
@@ -51,6 +66,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Question.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Module2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Module3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Module1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

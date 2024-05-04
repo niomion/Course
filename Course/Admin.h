@@ -1,5 +1,6 @@
 #pragma once
 #include "User.h"
+#include "Test.h"
 #include "CurrentUser.h"
 
 namespace Course {
@@ -80,10 +81,10 @@ namespace Course {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		/* Test^ createtest = gcnew Test;
+		Test^ createtest = gcnew Test;
 		this->Hide();
 		createtest->ShowDialog();
-		this->Show(); */
+		this->Show(); 
 	}
 
 	};
