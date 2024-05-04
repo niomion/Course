@@ -4,6 +4,7 @@
 #include "User.h"
 #include "Student.h"
 #include "Admin.h"
+#include "Module2.h"
 
 namespace Course {
 
@@ -23,6 +24,8 @@ namespace Course {
 		Authorisation(void)
 		{
 			InitializeComponent();
+			Module2^ timerm = gcnew Module2(pnl_loading, pnl_auto);
+			timerm->timer->Start();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -39,7 +42,10 @@ namespace Course {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ pnl_auto;
+	Module2 module2;
+	protected:
+
 	protected:
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
@@ -47,6 +53,11 @@ namespace Course {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Panel^ pnl_loading;
+
+
+
 
 
 	protected:
@@ -73,46 +84,62 @@ namespace Course {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Authorisation::typeid));
+			this->pnl_auto = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->panel2->SuspendLayout();
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pnl_loading = (gcnew System::Windows::Forms::Panel());
+			this->pnl_auto->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->pnl_loading->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// panel2
+			// pnl_auto
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->Controls->Add(this->button1);
-			this->panel2->Controls->Add(this->button2);
-			this->panel2->Controls->Add(this->textBox1);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->textBox2);
-			this->panel2->Location = System::Drawing::Point(60, 60);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(350, 350);
-			this->panel2->TabIndex = 7;
+			this->pnl_auto->BackColor = System::Drawing::Color::Transparent;
+			this->pnl_auto->Controls->Add(this->button1);
+			this->pnl_auto->Controls->Add(this->button2);
+			this->pnl_auto->Controls->Add(this->textBox1);
+			this->pnl_auto->Controls->Add(this->label1);
+			this->pnl_auto->Controls->Add(this->label2);
+			this->pnl_auto->Controls->Add(this->textBox2);
+			this->pnl_auto->Location = System::Drawing::Point(60, 60);
+			this->pnl_auto->Name = L"pnl_auto";
+			this->pnl_auto->Size = System::Drawing::Size(350, 350);
+			this->pnl_auto->TabIndex = 7;
+			this->pnl_auto->Visible = false;
 			// 
-			// textBox2
+			// button1
 			// 
-			this->textBox2->Location = System::Drawing::Point(123, 174);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(92, 20);
-			this->textBox2->TabIndex = 1;
-			this->textBox2->UseSystemPasswordChar = true;
+			this->button1->Location = System::Drawing::Point(50, 200);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(250, 65);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Увійти";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Authorisation::button1_Click);
 			// 
-			// label2
+			// button2
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(98, 127);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(45, 13);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"Пароль";
+			this->button2->Location = System::Drawing::Point(50, 275);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(250, 65);
+			this->button2->TabIndex = 0;
+			this->button2->Text = L"Регестрація ";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Authorisation::button2_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(35, 85);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(92, 20);
+			this->textBox1->TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -125,39 +152,50 @@ namespace Course {
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Логін";
 			// 
-			// textBox1
+			// label2
 			// 
-			this->textBox1->Location = System::Drawing::Point(35, 85);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(92, 20);
-			this->textBox1->TabIndex = 1;
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(98, 127);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(45, 13);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"Пароль";
 			// 
-			// button2
+			// textBox2
 			// 
-			this->button2->Location = System::Drawing::Point(50, 275);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(250, 65);
-			this->button2->TabIndex = 0;
-			this->button2->Text = L"Регестрація ";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Authorisation::button2_Click);
+			this->textBox2->Location = System::Drawing::Point(123, 174);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(92, 20);
+			this->textBox2->TabIndex = 1;
+			this->textBox2->UseSystemPasswordChar = true;
 			// 
-			// button1
+			// pictureBox1
 			// 
-			this->button1->Location = System::Drawing::Point(50, 200);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(250, 65);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Увійти";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Authorisation::button1_Click);
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(484, 461);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 8;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pnl_loading
+			// 
+			this->pnl_loading->Controls->Add(this->pictureBox1);
+			this->pnl_loading->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pnl_loading->Location = System::Drawing::Point(0, 0);
+			this->pnl_loading->Name = L"pnl_loading";
+			this->pnl_loading->Size = System::Drawing::Size(484, 461);
+			this->pnl_loading->TabIndex = 9;
 			// 
 			// Authorisation
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(484, 461);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->pnl_loading);
+			this->Controls->Add(this->pnl_auto);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
@@ -165,8 +203,10 @@ namespace Course {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Authorisation";
 			this->Load += gcnew System::EventHandler(this, &Authorisation::Authorisation_Load);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
+			this->pnl_auto->ResumeLayout(false);
+			this->pnl_auto->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->pnl_loading->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -206,7 +246,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void Authorisation_Load(System::Object^ sender, System::EventArgs^ e) {
-	panel2->BringToFront();
+
 }
 };
 }

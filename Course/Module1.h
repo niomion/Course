@@ -3,25 +3,20 @@
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace System::IO;
+using namespace System::Threading;
 ref class Module1
 {
 public:
-    int writeTheory(String^ fileName) {
-        StreamReader^ sr = gcnew StreamReader(fileName);
-        String^ line = sr->ReadLine();
-        sr->Close();
-        int number = 0;
-        if (!String::IsNullOrEmpty(line)) {
-            if (Int32::TryParse(line, number)) {
-                return number;
-            }
-            else {
-                return -1;
-            }
-        }
-        else {
-            return -1;
-        }
+
+    void writeToFile(String^ fileName, String^ contain) {
+        StreamWriter^ sw = gcnew StreamWriter(fileName);
+        sw->WriteLine(contain);
+        sw->Close();
+    }
+    void writeToFile(String^ fileName, String^ contain, bool yes) {
+        StreamWriter^ sw = gcnew StreamWriter(fileName);
+        sw->Write(contain);
+        sw->Close();
     }
 };
 

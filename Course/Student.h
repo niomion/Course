@@ -573,7 +573,7 @@ namespace Course {
 	
 	}
 private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	String^ theorystr = module2.loadTheory("theory.txt");
+	String^ theorystr = module2.loadFile("theory.txt");
 	theory->Text = theorystr;
 	theory->Show();
 }
