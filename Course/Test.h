@@ -36,6 +36,7 @@ namespace Course {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::RadioButton^ radioButton5;
 	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Panel^ panel1;
 	public:
 		list<Question^>::iterator current;
 
@@ -93,46 +94,48 @@ namespace Course {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(118, 26);
+			this->textBox1->Location = System::Drawing::Point(116, 21);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(285, 20);
 			this->textBox1->TabIndex = 0;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(67, 80);
+			this->textBox2->Location = System::Drawing::Point(65, 75);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(259, 20);
 			this->textBox2->TabIndex = 1;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(67, 106);
+			this->textBox3->Location = System::Drawing::Point(65, 101);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(259, 20);
 			this->textBox3->TabIndex = 2;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(67, 132);
+			this->textBox4->Location = System::Drawing::Point(65, 127);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(259, 20);
 			this->textBox4->TabIndex = 3;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(67, 158);
+			this->textBox5->Location = System::Drawing::Point(65, 153);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(259, 20);
 			this->textBox5->TabIndex = 4;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(12, 226);
+			this->button1->Location = System::Drawing::Point(10, 221);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 5;
@@ -143,7 +146,7 @@ namespace Course {
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(47, 83);
+			this->radioButton1->Location = System::Drawing::Point(45, 78);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(14, 13);
 			this->radioButton1->TabIndex = 6;
@@ -153,7 +156,7 @@ namespace Course {
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Location = System::Drawing::Point(47, 109);
+			this->radioButton2->Location = System::Drawing::Point(45, 104);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(14, 13);
 			this->radioButton2->TabIndex = 7;
@@ -163,7 +166,7 @@ namespace Course {
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
-			this->radioButton3->Location = System::Drawing::Point(47, 135);
+			this->radioButton3->Location = System::Drawing::Point(45, 130);
 			this->radioButton3->Name = L"radioButton3";
 			this->radioButton3->Size = System::Drawing::Size(14, 13);
 			this->radioButton3->TabIndex = 8;
@@ -173,7 +176,7 @@ namespace Course {
 			// radioButton4
 			// 
 			this->radioButton4->AutoSize = true;
-			this->radioButton4->Location = System::Drawing::Point(47, 161);
+			this->radioButton4->Location = System::Drawing::Point(45, 156);
 			this->radioButton4->Name = L"radioButton4";
 			this->radioButton4->Size = System::Drawing::Size(14, 13);
 			this->radioButton4->TabIndex = 9;
@@ -182,7 +185,7 @@ namespace Course {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(438, 226);
+			this->button2->Location = System::Drawing::Point(436, 221);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 10;
@@ -192,7 +195,7 @@ namespace Course {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(190, 226);
+			this->button3->Location = System::Drawing::Point(188, 221);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 11;
@@ -202,7 +205,7 @@ namespace Course {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(280, 226);
+			this->button4->Location = System::Drawing::Point(278, 221);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 12;
@@ -212,7 +215,7 @@ namespace Course {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(109, 226);
+			this->button5->Location = System::Drawing::Point(107, 221);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 13;
@@ -223,7 +226,7 @@ namespace Course {
 			// radioButton5
 			// 
 			this->radioButton5->AutoSize = true;
-			this->radioButton5->Location = System::Drawing::Point(47, 187);
+			this->radioButton5->Location = System::Drawing::Point(45, 182);
 			this->radioButton5->Name = L"radioButton5";
 			this->radioButton5->Size = System::Drawing::Size(14, 13);
 			this->radioButton5->TabIndex = 15;
@@ -232,37 +235,47 @@ namespace Course {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(67, 184);
+			this->textBox6->Location = System::Drawing::Point(65, 179);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(259, 20);
 			this->textBox6->TabIndex = 14;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Silver;
+			this->panel1->Controls->Add(this->radioButton5);
+			this->panel1->Controls->Add(this->textBox6);
+			this->panel1->Controls->Add(this->button5);
+			this->panel1->Controls->Add(this->button4);
+			this->panel1->Controls->Add(this->button3);
+			this->panel1->Controls->Add(this->button2);
+			this->panel1->Controls->Add(this->radioButton4);
+			this->panel1->Controls->Add(this->radioButton3);
+			this->panel1->Controls->Add(this->radioButton2);
+			this->panel1->Controls->Add(this->radioButton1);
+			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->textBox5);
+			this->panel1->Controls->Add(this->textBox4);
+			this->panel1->Controls->Add(this->textBox3);
+			this->panel1->Controls->Add(this->textBox2);
+			this->panel1->Controls->Add(this->textBox1);
+			this->panel1->Location = System::Drawing::Point(2, 12);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(522, 253);
+			this->panel1->TabIndex = 16;
 			// 
 			// Test
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(525, 261);
-			this->Controls->Add(this->radioButton5);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->radioButton4);
-			this->Controls->Add(this->radioButton3);
-			this->Controls->Add(this->radioButton2);
-			this->Controls->Add(this->radioButton1);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->panel1);
 			this->Name = L"Test";
 			this->Text = L"Test";
 			this->Load += gcnew System::EventHandler(this, &Test::Test_Load);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion

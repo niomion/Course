@@ -131,7 +131,6 @@
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="Registration.cpp" />
     <ClCompile Include="Student.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +151,6 @@
     <ClInclude Include="Student.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Test.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +165,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

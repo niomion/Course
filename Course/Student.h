@@ -43,6 +43,8 @@ namespace Course {
 	list<Question^>^ questions_list;
 	Module2 module2;
 	Module3 module3;
+	String^ timern = (module3.readFile("sec.txt").ToString());
+	String^ maxq = (module3.readFile("hwque.txt").ToString());
 	private: System::Windows::Forms::Button^ button2;
 	public:
 	private: System::Windows::Forms::Button^ button3;
@@ -61,6 +63,7 @@ namespace Course {
 	private: System::Windows::Forms::Panel^ testpanel;
 
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ lb_count;
 
 
 		   list<Question^>::iterator current;
@@ -122,6 +125,7 @@ namespace Course {
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->testpanel = (gcnew System::Windows::Forms::Panel());
+			this->lb_count = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
@@ -275,6 +279,7 @@ namespace Course {
 			// testpanel
 			// 
 			this->testpanel->BackColor = System::Drawing::Color::MistyRose;
+			this->testpanel->Controls->Add(this->lb_count);
 			this->testpanel->Controls->Add(this->label4);
 			this->testpanel->Controls->Add(this->label2);
 			this->testpanel->Controls->Add(this->button5);
@@ -298,10 +303,19 @@ namespace Course {
 			this->testpanel->TabIndex = 25;
 			this->testpanel->Visible = false;
 			// 
+			// lb_count
+			// 
+			this->lb_count->AutoSize = true;
+			this->lb_count->Location = System::Drawing::Point(128, 256);
+			this->lb_count->Name = L"lb_count";
+			this->lb_count->Size = System::Drawing::Size(56, 13);
+			this->lb_count->TabIndex = 28;
+			this->lb_count->Text = L"NaN/NaN\r\n";
+			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(166, 352);
+			this->label4->Location = System::Drawing::Point(120, 354);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(76, 13);
 			this->label4->TabIndex = 27;
@@ -310,7 +324,7 @@ namespace Course {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(98, 248);
+			this->label2->Location = System::Drawing::Point(100, 242);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(116, 13);
 			this->label2->TabIndex = 26;
@@ -470,6 +484,7 @@ namespace Course {
 	private: Void checkIt() {
 		it == 0 ? button2->Enabled = false : button2->Enabled = true;
 		it == que-1 ? button3->Enabled = false : button3->Enabled = true;
+		lb_count->Text = (it+1).ToString() + "/" + maxq;
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -498,8 +513,8 @@ namespace Course {
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		int timern = module3.readFile("sec.txt");
-		label4->Text = "Залишилось: " + timern.ToString() + " секунд";
+		label4->Text = "Залишилось: " + timern + " секунд";
+		lb_count->Text = it.ToString() + "/" + maxq;
 		Module3^ timerm = gcnew Module3(button5, label4);
 		timerm->timer->Start();
 		testpanel->Show();
@@ -577,5 +592,6 @@ private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^
 	theory->Text = theorystr;
 	theory->Show();
 }
+
 };
 }
